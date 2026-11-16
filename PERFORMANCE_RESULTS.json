@@ -1,0 +1,55 @@
+{
+  "before": {
+    "mode": "old",
+    "nodes": 5634,
+    "edges": 10793,
+    "load_median_s": 1.0420605169999817,
+    "route_median_s": 4.057330356999955,
+    "load_times": [
+      0.8035929119998855,
+      1.0420605169999817,
+      1.166237757999852
+    ],
+    "route_times": [
+      3.9232890279999992,
+      4.421330330000046,
+      4.057330356999955
+    ],
+    "statuses": [
+      "reached",
+      "reached",
+      "reached"
+    ]
+  },
+  "after": {
+    "mode": "fast",
+    "nodes": 5634,
+    "edges": 10793,
+    "load_median_s": 0.5904909729999872,
+    "route_median_s": 0.5465496050001093,
+    "load_times": [
+      0.5707670710000912,
+      0.6874001119999775,
+      0.5904909729999872
+    ],
+    "route_times": [
+      0.5465496050001093,
+      0.5238373170000159,
+      0.6165032139999767
+    ],
+    "statuses": [
+      "reached",
+      "reached",
+      "reached"
+    ]
+  },
+  "synthetic_stress": {
+    "nodes": 56340,
+    "edges": 107930,
+    "load_s": 6.308438025999976,
+    "route_s": 1.4857712799998808,
+    "status": "reached",
+    "steps": 107,
+    "synthetic": true
+  }
+}

@@ -1,0 +1,4 @@
+Stage 4: 50 tests passed.
+New coverage: geometry, reverse directions, parallel edges, one-way branches, speed units/provenance, snapshot integrity, graph/route cache invalidation.
+Streamlit AppTest: both pages render without Python exceptions.
+No full-city or browser visual verification in this stage; ETA not enabled yet.

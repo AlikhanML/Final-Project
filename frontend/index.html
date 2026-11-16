@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="kk"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://tile.openstreetmap.org"><link rel="dns-prefetch" href="//tile.openstreetmap.org"><link rel="dns-prefetch" href="//a.basemaps.cartocdn.com"><link rel="stylesheet" href="leaflet.css"><link rel="stylesheet" href="style.css?v=62"><link rel="stylesheet" href="layout.css?v=68"><link rel="stylesheet" href="theme.css?v=66"><link rel="stylesheet" href="professional.css?v=85"><link rel="stylesheet" href="mobile.css?v=78"></head>
+<body><main id="screen">
+<div id="map" aria-label="Астана картасы"></div>
+<div class="top"><button id="brand" class="glass status" title="Жоба туралы"><span class="live"></span><b>qadam<span>↗</span></b><small>ЖЕДЕЛ ЖӘРДЕМ</small></button></div>
+<div id="hint" class="glass hint">Картадан шақырту орнын таңдаңыз</div>
+<div class="tools"><button id="layers" class="glass tool green" title="Карта қабаттары" data-icon="layers"></button><div class="zoom glass"><button id="plus" title="Үлкейту">+</button><button id="minus" title="Кішірейту">−</button></div><button id="locate" class="glass tool" title="Қазіргі орнымды шақырту нүктесі ретінде таңдау" data-icon="navigate"></button></div>
+<div id="loading" class="glass busy" hidden>Маршрут есептелуде…</div>
+<section class="dock"><div class="search-row"><div class="search"><span data-icon="search"></span><input id="search" placeholder="Шақырту мекенжайын іздеу" autocomplete="off" aria-label="Көше немесе орын іздеу" aria-controls="sheet-content"><button id="clear-search" title="Іздеуді тазалау" aria-label="Іздеуді тазалау" hidden>×</button></div></div></section>
+<section class="lower glass dispatch-panel" aria-label="Шақырту және маршрут">
+<div class="dispatch-summary">
+<span class="dispatch-heading"><b id="route-title">Шақырту бағыты</b></span>
+<span class="dispatch-endpoint"><small>АУРУХАНА</small><strong id="summary-hospital">Автоматты таңдалады</strong></span>
+<span class="dispatch-endpoint destination"><small>ШАҚЫРТУ ОРНЫ</small><strong id="summary-destination" aria-live="polite">Картадан нүкте таңдаңыз</strong></span>
+<div class="call-priority" role="group" aria-labelledby="priority-label">
+<span id="priority-label">Шақырту басымдығы</span>
+<select id="call-priority" hidden disabled aria-label="Шақырту басымдығы"><option value="normal">Қалыпты жедел жәрдем</option><option value="urgent">Шұғыл жедел жәрдем</option></select>
+<div class="priority-options">
+<button id="priority-urgent" class="priority-badge urgent" type="button" aria-pressed="false" disabled><i class="priority-dot" aria-hidden="true"></i><span>Шұғыл</span></button>
+<button id="priority-normal" class="priority-badge normal" type="button" aria-pressed="true" disabled><i class="priority-dot" aria-hidden="true"></i><span>Қалыпты жедел жәрдем</span></button>
+</div></div>
+<div class="dispatch-metrics">
+<div class="metric-card"><span class="metric-icon" data-icon="clock" aria-hidden="true"></span><b id="eta-chip">—</b><small>Болжамды уақыт</small></div>
+<div class="metric-card"><span class="metric-icon" data-icon="navigate" aria-hidden="true"></span><b id="distance">—</b><small>Қалған қашықтық</small></div>
+</div>
+<small id="eta-explanation" class="dispatch-status" aria-live="polite"></small>
+<span id="route-sub" class="dispatch-status" hidden>Тек шақырту орнын таңдаңыз · Старт автоматты</span>
+</div>
+<section id="caller-contact" class="caller-contact" aria-labelledby="caller-contact-title" hidden>
+<strong id="caller-contact-title">Шақырған адам</strong>
+<div class="caller-contact-actions">
+<button id="caller-chat" type="button" aria-controls="sheet" disabled><span data-icon="chat"></span><span>Чат</span></button>
+<button id="caller-call" type="button" aria-controls="sheet" disabled><span data-icon="phone"></span><span>Қоңырау</span></button>
+</div>
+</section>
+<button id="route-info" class="route-manage" aria-controls="sheet" title="Шақырту орнын өзгерту, тазалау және маршрут мәліметтерін ашу"><span><strong>Маршрутты басқару</strong><small>Шақырту орнын өзгерту · тазалау · мәліметтер</small></span><span class="route-manage-arrow" aria-hidden="true">›</span></button>
+<button id="route-action" class="route-action" disabled>Шақырту орнын таңдаңыз</button>
+<section id="trip-report" class="trip-report" hidden aria-label="Сапар нәтижесі">
+<h3>Сапар нәтижесі <small>Симуляция</small></h3>
+<p id="report-status" role="status"></p>
+<dl><div><dt>Жүрілген қашықтық</dt><dd id="report-distance">—</dd></div><div><dt>Сапар уақыты</dt><dd id="report-time">—</dd></div></dl>
+</section>
+<details id="playback"  class="demo-controls" hidden><summary>Маршрутты басқаруы</summary><div class="playback"><input id="progress" type="range" min="0" value="0" step="any" aria-label="Сапар уақыты, секунд"><span id="step">0:00</span><select id="playback-rate" aria-label="Ойнату жылдамдығы"><option value="1">1×</option><option value="5">5×</option><option value="10" selected>10×</option><option value="30">30×</option><option value="60">60×</option></select></div></details>
+</section>
+<section id="sheet" class="glass sheet" hidden><header><h2 id="sheet-title"></h2><button id="close-sheet" title="Жабу">×</button></header><div id="sheet-content"></div></section>
+<div id="toast" class="glass toast" hidden></div>
+</main><script src="leaflet.js"></script><script src="playback.js?v=58"></script><script src="traffic_view.js?v=59"></script><script src="language.js?v=84"></script><script src="app.js?v=94"></script><script src="mobile.js?v=78"></script></body></html>

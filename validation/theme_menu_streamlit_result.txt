@@ -1,0 +1,1 @@
+PASS: native popover Light and Dark buttons update session and page CSS; old radio selector and map theme button absent; no app exceptions. CSS position is not a browser visual test.

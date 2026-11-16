@@ -1,0 +1,82 @@
+[
+  {
+    "density": 0.7,
+    "seed": 42,
+    "priority": "normal",
+    "hospital": "№3 көпбейінді қалалық аурухана",
+    "eta_s": 1118.9348932051046,
+    "elapsed_s": 1118.9348932051046,
+    "breakdown": {
+      "signal_delay_s": 95.0,
+      "normal_signal_delay_s": 95.0,
+      "free_flow_s": 672.9526125597321,
+      "traffic_delay_s": 281.9822806453717,
+      "turn_delay_s": 69.0000000000008,
+      "same_path_saving_s": 0.0,
+      "normal_same_path_s": 1118.9348932051046,
+      "urgent_same_path_s": 840.6464107856129
+    },
+    "status": "reached",
+    "legal": true
+  },
+  {
+    "density": 0.7,
+    "seed": 42,
+    "priority": "urgent",
+    "hospital": "№3 көпбейінді қалалық аурухана",
+    "eta_s": 837.8349678440297,
+    "elapsed_s": 837.8349678440297,
+    "breakdown": {
+      "signal_delay_s": 0.0,
+      "normal_signal_delay_s": 151.0,
+      "free_flow_s": 671.5526326048721,
+      "traffic_delay_s": 105.28233523915806,
+      "turn_delay_s": 60.99999999999959,
+      "same_path_saving_s": 346.52433687272213,
+      "normal_same_path_s": 1184.359304716752,
+      "urgent_same_path_s": 837.8349678440297
+    },
+    "status": "reached",
+    "legal": true
+  },
+  {
+    "density": 0.0,
+    "seed": 42,
+    "priority": "normal",
+    "hospital": "№3 көпбейінді қалалық аурухана",
+    "eta_s": 832.0980612529473,
+    "elapsed_s": 832.0980612529473,
+    "breakdown": {
+      "signal_delay_s": 99.0,
+      "normal_signal_delay_s": 99.0,
+      "free_flow_s": 668.0980612529472,
+      "traffic_delay_s": 0.0,
+      "turn_delay_s": 65.00000000000011,
+      "same_path_saving_s": 0.0,
+      "normal_same_path_s": 832.0980612529473,
+      "urgent_same_path_s": 733.0980612529473
+    },
+    "status": "reached",
+    "legal": true
+  },
+  {
+    "density": 0.0,
+    "seed": 42,
+    "priority": "urgent",
+    "hospital": "№3 көпбейінді қалалық аурухана",
+    "eta_s": 732.552632604872,
+    "elapsed_s": 732.552632604872,
+    "breakdown": {
+      "signal_delay_s": 0.0,
+      "normal_signal_delay_s": 151.0,
+      "free_flow_s": 671.5526326048721,
+      "traffic_delay_s": 0.0,
+      "turn_delay_s": 60.999999999999886,
+      "same_path_saving_s": 151.0,
+      "normal_same_path_s": 883.552632604872,
+      "urgent_same_path_s": 732.552632604872
+    },
+    "status": "reached",
+    "legal": true
+  }
+]

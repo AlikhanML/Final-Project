@@ -1,0 +1,99 @@
+83 Python tests passed; 23 JS assertions passed.
+Streamlit initial, trip and unchanged rerender passed.
+Before 6.644737s; after 2.431203s; identical scenario outputs.
+Windows metadata regression included; native Windows not available.
+
+2026-10-19 12:29:28.985 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+2026-10-19 12:29:28.985 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+2026-10-19 12:29:28.986 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+test_astar_matches_bfs (test_app.RouteTests.test_astar_matches_bfs) ... ok
+test_no_route (test_app.RouteTests.test_no_route) ... ok
+test_simulation (test_app.RouteTests.test_simulation) ... 2026-10-19 12:29:29.012 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+ok
+2026-10-19 12:29:29.959 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+2026-10-19 12:29:29.959 WARNING streamlit.runtime.caching.cache_data_api: No runtime found, using MemoryCacheStorageManager
+test_astar_optimal_distance (test_astana.AstanaTests.test_astar_optimal_distance) ... ok
+test_dynamic_trip (test_astana.AstanaTests.test_dynamic_trip) ... ok
+test_zero_noise_reverse_route (test_astana.AstanaTests.test_zero_noise_reverse_route) ... ok
+test_conflicting_name_rejected (test_hospital.HospitalTests.test_conflicting_name_rejected) ... ok
+test_destination_reselects_start (test_hospital.HospitalTests.test_destination_reselects_start) ... ok
+test_directed_distance (test_hospital.HospitalTests.test_directed_distance) ... ok
+test_nearest_pharmacy_is_skipped (test_hospital.HospitalTests.test_nearest_pharmacy_is_skipped) ... ok
+test_no_hospitals (test_hospital.HospitalTests.test_no_hospitals) ... ok
+test_old_untyped_records_rejected (test_hospital.HospitalTests.test_old_untyped_records_rejected) ... ok
+test_unreachable_hospital (test_hospital.HospitalTests.test_unreachable_hospital) ... ok
+test_directional_and_conditional (test_road_rules.RoadRulesTests.test_directional_and_conditional) ... ok
+test_no_foot_or_cycle_routes (test_road_rules.RoadRulesTests.test_no_foot_or_cycle_routes) ... ok
+test_normal_road_with_sidewalk (test_road_rules.RoadRulesTests.test_normal_road_with_sidewalk) ... ok
+test_oneway (test_road_rules.RoadRulesTests.test_oneway) ... ok
+test_restrictions (test_road_rules.RoadRulesTests.test_restrictions) ... ok
+test_specific_access_override (test_road_rules.RoadRulesTests.test_specific_access_override) ... ok
+test_core_has_no_ui_imports (tests.test_architecture.ArchitectureTests.test_core_has_no_ui_imports) ... ok
+test_core_import_does_not_initialize_streamlit (tests.test_architecture.ArchitectureTests.test_core_import_does_not_initialize_streamlit) ... ok
+test_astar_matches_dijkstra_for_all_pairs (tests.test_baseline.BaselineContracts.test_astar_matches_dijkstra_for_all_pairs) ... ok
+test_blockage_detour_and_world_unchanged (tests.test_baseline.BaselineContracts.test_blockage_detour_and_world_unchanged) ... ok
+test_blocked_transition_does_not_mutate_world (tests.test_baseline.BaselineContracts.test_blocked_transition_does_not_mutate_world) ... ok
+test_hmm_exact_observations (tests.test_baseline.BaselineContracts.test_hmm_exact_observations) ... ok
+test_hmm_noisy_observations_remain_finite (tests.test_baseline.BaselineContracts.test_hmm_noisy_observations_remain_finite) ... ok
+test_no_route_is_explicit (tests.test_baseline.BaselineContracts.test_no_route_is_explicit) ... ok
+test_q_training_is_seeded_and_does_not_mutate_world (tests.test_baseline.BaselineContracts.test_q_training_is_seeded_and_does_not_mutate_world) ... ok
+test_start_equals_goal (tests.test_baseline.BaselineContracts.test_start_equals_goal) ... ok
+test_all_geometry_vertices_and_reverse_order_preserved (tests.test_graph_metadata.GraphMetadataTests.test_all_geometry_vertices_and_reverse_order_preserved) ... ok
+test_build_rejects_snapshot_changed_during_load (tests.test_graph_metadata.GraphMetadataTests.test_build_rejects_snapshot_changed_during_load) ... ok
+test_changed_file_rejects_old_node_identity (tests.test_graph_metadata.GraphMetadataTests.test_changed_file_rejects_old_node_identity) ... ok
+test_conditional_kept_without_claiming_evaluation (tests.test_graph_metadata.GraphMetadataTests.test_conditional_kept_without_claiming_evaluation) ... ok
+test_direction_and_fallback_provenance (tests.test_graph_metadata.GraphMetadataTests.test_direction_and_fallback_provenance) ... ok
+test_file_change_invalidates_graph_cache (tests.test_graph_metadata.GraphMetadataTests.test_file_change_invalidates_graph_cache) ... ok
+test_missing_geometry_and_nan_are_rejected (tests.test_graph_metadata.GraphMetadataTests.test_missing_geometry_and_nan_are_rejected) ... ok
+test_one_way_branch_is_retained (tests.test_graph_metadata.GraphMetadataTests.test_one_way_branch_is_retained) ... ok
+test_parallel_roads_are_not_overwritten (tests.test_graph_metadata.GraphMetadataTests.test_parallel_roads_are_not_overwritten) ... ok
+test_route_cache_also_changes_with_snapshot (tests.test_graph_metadata.GraphMetadataTests.test_route_cache_also_changes_with_snapshot) ... ok
+test_speed_units_and_unknown_values (tests.test_graph_metadata.GraphMetadataTests.test_speed_units_and_unknown_values) ... ok
+test_closed_edge_never_used (tests.test_online_control.OnlineControlTests.test_closed_edge_never_used) ... ok
+test_controller_has_no_truth_argument (tests.test_online_control.OnlineControlTests.test_controller_has_no_truth_argument) ... ok
+test_decision_after_each_online_update (tests.test_online_control.OnlineControlTests.test_decision_after_each_online_update) ... ok
+test_false_arrival_is_not_success (tests.test_online_control.OnlineControlTests.test_false_arrival_is_not_success) ... ok
+test_heading_is_not_local_action_index (tests.test_online_control.OnlineControlTests.test_heading_is_not_local_action_index) ... ok
+test_low_confidence_holds (tests.test_online_control.OnlineControlTests.test_low_confidence_holds) ... ok
+test_noisy_run_bounded_and_legal (tests.test_online_control.OnlineControlTests.test_noisy_run_bounded_and_legal) ... ok
+test_nonfinite_sensor_rejected (tests.test_online_control.OnlineControlTests.test_nonfinite_sensor_rejected) ... ok
+test_observation_changes_control_including_q (tests.test_online_control.OnlineControlTests.test_observation_changes_control_including_q) ... ok
+test_prediction_matches_actuator (tests.test_online_control.OnlineControlTests.test_prediction_matches_actuator) ... ok
+test_recovery_from_wrong_initial_fix (tests.test_online_control.OnlineControlTests.test_recovery_from_wrong_initial_fix) ... ok
+test_atomic_replacement_invalidates (tests.test_performance.PerformanceTests.test_atomic_replacement_invalidates) ... ok
+test_index_matches_full_scan (tests.test_performance.PerformanceTests.test_index_matches_full_scan) ... ok
+test_same_size_edit_with_restored_mtime_invalidates (tests.test_performance.PerformanceTests.test_same_size_edit_with_restored_mtime_invalidates) ... ok
+test_ties_duplicate_nodes_and_poles (tests.test_performance.PerformanceTests.test_ties_duplicate_nodes_and_poles) ... ok
+test_unchanged_file_is_read_once (tests.test_performance.PerformanceTests.test_unchanged_file_is_read_once) ... ok
+test_windows_detects_change_even_with_identical_metadata (tests.test_performance.PerformanceTests.test_windows_detects_change_even_with_identical_metadata) ... ok
+test_bad_policy_cycles_then_astar_reaches_goal (tests.test_policy_safety.PolicySafetyTests.test_bad_policy_cycles_then_astar_reaches_goal) ... ok
+test_bootstrap_ignores_invalid_terminal_and_dead_ends (tests.test_policy_safety.PolicySafetyTests.test_bootstrap_ignores_invalid_terminal_and_dead_ends) ... ok
+test_disabled_dynamics_never_uses_q_policy (tests.test_policy_safety.PolicySafetyTests.test_disabled_dynamics_never_uses_q_policy) ... ok
+test_exploration_samples_only_allowed_actions (tests.test_policy_safety.PolicySafetyTests.test_exploration_samples_only_allowed_actions) ... ok
+test_grid_warm_start_drops_invalid_values (tests.test_policy_safety.PolicySafetyTests.test_grid_warm_start_drops_invalid_values) ... ok
+test_isolated_state_has_no_action (tests.test_policy_safety.PolicySafetyTests.test_isolated_state_has_no_action) ... ok
+test_large_invalid_value_never_wins (tests.test_policy_safety.PolicySafetyTests.test_large_invalid_value_never_wins) ... ok
+test_start_at_goal_is_terminal (tests.test_policy_safety.PolicySafetyTests.test_start_at_goal_is_terminal) ... ok
+test_step_limit_reported (tests.test_policy_safety.PolicySafetyTests.test_step_limit_reported) ... ok
+test_training_leaves_blocked_and_terminal_actions_unused (tests.test_policy_safety.PolicySafetyTests.test_training_leaves_blocked_and_terminal_actions_unused) ... ok
+test_closure_invalidates_and_is_avoided (tests.test_route_plan.RoutePlanTests.test_closure_invalidates_and_is_avoided) ... ok
+test_low_confidence_does_not_search (tests.test_route_plan.RoutePlanTests.test_low_confidence_does_not_search) ... ok
+test_new_trip_has_independent_cache (tests.test_route_plan.RoutePlanTests.test_new_trip_has_independent_cache) ... ok
+test_no_route_clears_old_path (tests.test_route_plan.RoutePlanTests.test_no_route_clears_old_path) ... ok
+test_off_route_replans (tests.test_route_plan.RoutePlanTests.test_off_route_replans) ... ok
+test_return_to_passed_node_replans (tests.test_route_plan.RoutePlanTests.test_return_to_passed_node_replans) ... ok
+test_wait_and_progress_reuse_plan (tests.test_route_plan.RoutePlanTests.test_wait_and_progress_reuse_plan) ... ok
+test_reuses_private_world_until_identity_changes (tests.test_session_cache.SessionCacheTests.test_reuses_private_world_until_identity_changes) ... ok
+test_invalid_parameters_rejected (tests.test_travel_time.TravelTimeTests.test_invalid_parameters_rejected) ... ok
+test_more_geometry_vertices_do_not_add_time (tests.test_travel_time.TravelTimeTests.test_more_geometry_vertices_do_not_add_time) ... ok
+test_q_reward_is_seconds_and_terminal_not_bootstrapped (tests.test_travel_time.TravelTimeTests.test_q_reward_is_seconds_and_terminal_not_bootstrapped) ... ok
+test_shortest_and_fastest_routes_differ (tests.test_travel_time.TravelTimeTests.test_shortest_and_fastest_routes_differ) ... ok
+test_terminal_has_zero_duration (tests.test_travel_time.TravelTimeTests.test_terminal_has_zero_duration) ... ok
+test_time_astar_matches_dijkstra (tests.test_travel_time.TravelTimeTests.test_time_astar_matches_dijkstra) ... ok
+test_timeline_and_eta_agree_without_changes (tests.test_travel_time.TravelTimeTests.test_timeline_and_eta_agree_without_changes) ... ok
+test_units_and_slowdown (tests.test_travel_time.TravelTimeTests.test_units_and_slowdown) ... ok
+
+----------------------------------------------------------------------
+Ran 83 tests in 6.665s
+
+OK

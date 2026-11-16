@@ -1,0 +1,3 @@
+Stage 3: 39 tests passed (10 new policy and termination tests).
+Node syntax check passed. Streamlit AppTest: both pages rendered without Python errors.
+No full-city or browser visual verification in this stage.

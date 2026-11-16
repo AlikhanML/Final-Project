@@ -1,0 +1,11 @@
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
+const nodes=[{nodeValue:'Болжамды уақыт'},{nodeValue:'Осы маршрутта: қалыпты 12.2 мин · шұғыл 11.9 мин · үнем 14.5 с. Кептеліс кідірісі −65%.'}];
+const context={window:{},NodeFilter:{SHOW_TEXT:4},MutationObserver:class{observe(){}},document:{body:{},documentElement:{},querySelectorAll:()=>[],createTreeWalker(){let i=0;return{nextNode:()=>nodes[i++]}}}};
+vm.createContext(context);vm.runInContext(fs.readFileSync(require.resolve('../frontend/language.js'),'utf8'),context);
+const api=context.window.QadamI18n;
+api.setLanguage('en');assert.equal(nodes[0].nodeValue,'Estimated arrival');assert(nodes[1].nodeValue.includes('12.2 min'));assert(!/[а-яқұүі]/i.test(nodes[1].nodeValue));
+api.setLanguage('ru');assert.equal(nodes[0].nodeValue,'Время прибытия');assert(nodes[1].nodeValue.includes('экономия 14.5 с'));
+api.setLanguage('kk');assert.equal(nodes[0].nodeValue,'Болжамды уақыт');
+nodes[1].nodeValue='A* · 2.50 км қалды';api.setLanguage('en');assert.equal(nodes[1].nodeValue,'A* · 2.50 km remaining');
+api.setLanguage('kk');assert.equal(nodes[1].nodeValue,'A* · 2.50 км қалды');
+console.log('Language switching, dynamic updates and restoration passed.');

@@ -1,0 +1,5 @@
+Stage 2: 29 tests passed.
+Grid and road deterministic simulation fields exactly match pre-refactor references.
+Streamlit AppTest: navigation and grid pages rendered without Python exceptions.
+Core imports without initializing Streamlit.
+No browser visual test or full-city data verification in this stage.

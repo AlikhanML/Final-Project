@@ -1,0 +1,15 @@
+streamlit>=1.54,<2
+numpy>=1.26,<3
+matplotlib>=3.8,<4
+
+plotly>=6.0,<7
+networkx>=3.2,<4
+folium>=0.19,<1
+streamlit-folium>=0.25,<1
+
+scipy>=1.11,<2
+
+shapely>=2.0,<3
+pyproj>=3.6,<4
+
+geopy>=2.4,<3

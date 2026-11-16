@@ -1,0 +1,31 @@
+/* Scoped to Qadam panels; never resize or recolor Leaflet's SVG paths. */
+body[data-theme="light"]{--map-bg:#edf2f5;--panel-bg:#fff;--panel-hover:#e4edf2;--border:#b5c7d3;--text:#172b3a;--accent:#087843}
+body[data-theme="light"] .qadam-osm-tiles{filter:none}
+body[data-theme="light"] #screen{border-color:#bdccd5}
+body[data-theme="light"] :is(.glass,.dock,.lower.dispatch-panel,.zoom,.mode,.sheet,.sheet header,.toast,.busy){background:rgba(255,255,255,.96);border-color:#b5c7d3;color:#172b3a}
+body[data-theme="light"] :is(.search,.layer-card,.journey-metrics>div,.search-empty,.layer-notice,.address-editor input,.playback select,.call-priority select){background:#edf3f7;color:#172b3a;border-color:#aabfcd}
+body[data-theme="light"] :is(.hint,.status small,.dispatch-heading,.dispatch-endpoint small,.dispatch-endpoint strong,.dispatch-metrics small,.dispatch-metrics b,.dispatch-status,.demo-controls summary,.sheet p,.sheet h2,.sheet summary,.sheet label,.sheet .row,.sheet .result,.sheet .result small,.address-editor label,.trip-report h3,.trip-report h3 small,.trip-report #report-status,.trip-report dt,.trip-report dd,.trip-report .report-note,.playback span,.traffic-legend,.layer-copy,.layer-copy small,.journey-point,.journey-point small){color:#294656}
+body[data-theme="light"] :is(.search input,.search button){color:#172b3a}
+body[data-theme="light"] .search input::placeholder{color:#5c7382}
+body[data-theme="light"] :is(.sheet .secondary,.sheet .map-pick,.route-manage){background:#e3f2e9;border-color:#a0c6b1;color:#16432e}
+body[data-theme="light"] :is(.route-manage small,.route-manage-arrow){color:#295e42}
+body[data-theme="light"] .call-priority select[data-priority="urgent"]{background:#fff0e7;color:#8c3408;border-color:#d79c78}
+body[data-theme="light"] .leaflet-control-attribution{background:#ffffffeb!important;color:#294656!important}
+body[data-theme="light"] .leaflet-control-attribution a{color:#075b87!important}
+body[data-theme="light"] .leaflet-tooltip{background:#fff;color:#172b3a;border-color:#adc2ce}
+body[data-theme="light"] .zoom button:hover{background:#e0ebf1;color:#087843}
+
+/* Light panels use opaque surfaces so map labels cannot bleed through text. */
+body[data-theme="light"] :is(.glass,.dock,.lower.dispatch-panel,.zoom,.mode,.sheet,.sheet header,.toast,.busy){background:#ffffff;backdrop-filter:none;-webkit-backdrop-filter:none;color:#172b3a}
+body[data-theme="light"] :is(.call-priority,.journey-metrics small,.traffic-scale small,.sheet .search-note,.sheet .search-result small,.route-copy small,.sensor,.address-editor summary){color:#405563}
+body[data-theme="light"] :is(.journey-metrics strong,.journey-point strong,.layer-copy strong,.dispatch-heading b,.dispatch-endpoint strong,.dispatch-metrics b,.trip-report dd){color:#172b3a}
+body[data-theme="light"] :is(.dispatch-panel,.sheet,.dock) :is(input,select)::placeholder{color:#526675;opacity:1}
+body[data-theme="light"] :is(.dispatch-panel,.sheet,.dock) :is(button,select):disabled{opacity:1;background:#e6edf2;color:#526675;border-color:#aabfcd}
+body[data-theme="light"] .layer-card:hover,body[data-theme="light"] .layer-card:focus-within{background:#e2edf3;border-color:#6c8797}
+body[data-theme="light"] .route-manage:hover{background:#d5eadd;border-color:#648c76;filter:none}
+body[data-theme="light"] .sheet .secondary:hover{background:#d5eadd;color:#16432e;filter:none}
+body[data-theme="light"] :is(.sheet .search-pin,#clear-search){background:#dce8f0;color:#244b65}
+body[data-theme="light"] .dispatch-heading>span{color:#405563}
+body[data-theme="light"] :is(.dispatch-metrics,.trip-report,.demo-controls,.sheet .result){border-color:#b5c7d3}
+body[data-theme="light"] .traffic-legend.muted{opacity:1;color:#526675}
+body[data-theme="light"] :is(.playback button,.route-card strong){color:#087843}

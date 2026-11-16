@@ -1,0 +1,6 @@
+Turn-aware integration validation
+106 Python unittest tests passed (offline suite).
+37 JavaScript assertions passed; app.js syntax check passed.
+Streamlit AppTest: startup, projected destination route, two reruns passed.
+ZIP CRC and source-byte equality verified during packaging.
+Windows launcher and user full-city snapshot not executed in this environment.

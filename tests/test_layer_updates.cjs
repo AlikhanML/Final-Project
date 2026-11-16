@@ -1,0 +1,35 @@
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
+const elements=new Map(),clears={};
+const element=id=>{if(!elements.has(id))elements.set(id,{style:{}});return elements.get(id);};
+const layer=points=>({points:[...points],addTo(g){g.items.push(this);return this;},addLatLng(p){this.points.push(p);},setLatLngs(p){this.points=p;},setLatLng(){return this;}});
+const context={console,setTimeout,clearTimeout,document:{getElementById:element,querySelectorAll:()=>[],body:{style:{}},addEventListener(){}},window:{parent:{innerHeight:800,postMessage(){}},addEventListener(){}},
+ L:{polyline:layer,marker:p=>layer([p]),circleMarker:p=>layer([p]),divIcon:x=>x},
+ QadamTrafficView:require('../frontend/traffic_view.js'),QadamPlayback:require('../frontend/playback.js'),cancelAnimationFrame(){},requestAnimationFrame(){return 1;}};
+vm.createContext(context);vm.runInContext(fs.readFileSync(require.resolve('../frontend/app.js'),'utf8'),context);
+context.group=name=>({items:[],clearLayers(){clears[name]=(clears[name]||0)+1;this.items=[];}});
+const run=s=>vm.runInContext(s,context);
+run(`groups=Object.fromEntries(['coverage','markers','base','traffic','route','hmm','gps','vehicle'].map(n=>[n,group(n)]));map={};
+ const pts=[[51,71],[51.01,71.01],[51.02,71.02]];
+ const trip={path:pts,base:pts,gps:pts,hmm:pts,timestamps_s:[0,10,20],elapsed_s:20,eta_plan_s:20,phases:[false,false,false],fallback:null,reached:true};
+ p={dataset_version:'v1',trip_id:1,trip,traffic_key:[1],traffic_bands:[[],[],[],[]]};draw();simTime=15;drawStep();
+ const originalTrail=trail,originalVehicle=vehicleMarker;
+`);
+assert.equal(run('groups.route.items.length'),2);
+assert.equal(run('trail.points.length'),3);
+const before={...clears};
+run("p.traffic_key=[2];draw()");
+for(const name of ['route','base','markers','coverage','gps','hmm'])assert.equal(clears[name],before[name],name+' preserved on traffic update');
+assert.equal(run('trail===originalTrail&&vehicleMarker===originalVehicle'),true);
+assert.equal(run('simTime'),15);
+run('flags.gps=true;draw()');
+assert.equal(run('groups.gps.items.length'),2);
+assert.equal(run('trail===originalTrail'),true);
+assert.equal(clears.route,before.route);
+run('flags.base=false;draw()');
+assert.equal(run('groups.route.items.length'),2);
+assert.deepEqual(JSON.parse(run('JSON.stringify(trail.points.at(-1))')),[51.015,71.015]);
+run('simTime=2;drawStep()');assert.equal(run('groups.gps.items.length'),1);
+run('p.trip_id=2;simTime=0;draw()');assert.equal(run('trail===originalTrail'),false);assert.equal(run('groups.gps.items.length'),1);
+run('p.trip=null;draw()');
+for(const name of ['route','gps','hmm','vehicle','base'])assert.equal(run(`groups.${name}.items.length`),0);
+console.log('21 selective-layer assertions passed.');

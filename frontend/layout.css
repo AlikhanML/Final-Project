@@ -1,0 +1,236 @@
+/* Design step 1: map-first layout, compact navigation panels. */
+#screen{min-height:600px;border-radius:18px}
+.glass{background:#192126;border-color:#344048;border-radius:14px}
+.top{top:16px;left:16px;right:16px}
+.status{height:44px;padding:0 14px;gap:9px}
+.status b{font-size:22px}.status small{font-size:9px;letter-spacing:.6px}
+.mode{font-size:9px;padding:8px 10px;background:#192126;border:1px solid #344048}
+.hint{top:72px;left:16px;max-width:calc(100% - 88px);padding:9px 12px;font-size:11px;line-height:1.5}
+.tools{top:64px;right:12px;bottom:auto;gap:8px}
+.tool{width:44px;height:44px;border-radius:13px}
+.tool svg{width:22px;height:22px}
+.zoom{margin-top:0;width:44px;padding:3px;gap:2px;border-radius:13px}
+.zoom button{width:36px;height:38px;font-size:26px}
+.traffic-ring{height:28px;width:28px;font-size:11px}
+.dock{left:0;right:0;bottom:0;width:auto;transform:none;padding:12px 14px 10px;border-radius:18px 18px 0 0;background:#192126;border:1px solid #344048}
+.handle,.home{display:none}
+.search-row{gap:8px}.search{height:44px;padding:0 12px;gap:9px;background:#242e35;border:1px solid #3b4852;border-radius:11px}
+.search input{font-size:13px}.search svg{width:20px;height:20px;flex-shrink:0}
+.menu{width:44px;border-radius:11px;background:#29353d;flex-shrink:0}.menu svg{width:23px;height:23px}
+nav{margin:9px 0 0;gap:6px}
+nav button{flex-direction:row;justify-content:center;gap:6px;min-height:38px;border-radius:9px;color:#aab7bf}
+nav svg{width:18px;height:18px}nav small{font-size:10px}
+nav .active{background:#263c33;color:#6ae6a0}
+.lower{left:12px;right:12px;bottom:138px;gap:8px;transform:none;width:auto}
+.sensor{display:grid;grid-template-columns:18px auto 1fr;gap:6px 8px;width:100%;padding:9px 12px;font-size:10px;align-items:center}
+.sensor>span:first-child svg{width:18px;height:18px}.sensor #eta-chip{text-align:right;white-space:nowrap}
+.traffic-legend{grid-column:1/-1;display:flex;align-items:center;gap:5px;color:#94a6b1;font-size:10px;padding-top:5px;border-top:1px solid #ffffff0b}
+.traffic-legend i{width:16px;height:4px;border-radius:2px;display:inline-block}.traffic-legend i:nth-child(1){background:#46b77b}.traffic-legend i:nth-child(2){background:#e9c647}.traffic-legend i:nth-child(3){background:#ee913e}.traffic-legend i:nth-child(4){background:#c95e53}.traffic-legend span{margin-left:3px}
+.playback{padding:6px 8px;gap:6px;min-height:44px}.playback button{flex-shrink:0;width:28px}.playback span{font-size:9px}.playback select{padding:5px 3px;font-size:11px;width:50px}
+.info-row{height:62px}.route-card{padding:10px 12px;gap:10px}.route-card svg{width:22px;height:22px;flex-shrink:0}.route-copy b{font-size:13px}.route-copy small{font-size:10px}.route-card strong{font-size:12px}
+.sheet{bottom:138px;left:12px;width:calc(100% - 24px);max-height:calc(100% - 218px);transform:none;padding:16px;border:1px solid #3b4852;background:#192126}
+.sheet header{position:sticky;top:-16px;background:#192126;padding:8px 0;z-index:1}.sheet h2{font-size:16px}
+.leaflet-bottom.leaflet-right{bottom:119px}
+.leaflet-control-attribution{max-width:calc(100vw - 30px);font-size:9px!important}
+@media(min-width:800px){
+ .top{top:20px;left:20px;right:20px}
+ .dock{top:78px;bottom:auto;left:20px;right:auto;width:380px;border-radius:14px;padding:12px}
+ .hint{top:202px;left:20px;max-width:380px;width:380px}
+ .lower{left:20px;right:auto;bottom:20px;width:380px}
+ .tools{top:76px;right:20px;bottom:28px;gap:10px}.zoom{margin-top:auto}
+ .sheet{top:202px;bottom:auto;left:20px;width:380px;max-height:calc(100% - 226px)}
+ .leaflet-bottom.leaflet-right{bottom:0}
+ .toast{top:24px;left:50%;max-width:calc(100% - 480px)}
+}
+@media(max-width:359px){
+ .status small{display:none}.mode{display:none}
+ .route-card{gap:7px}.route-copy b{font-size:12px}.route-card strong{font-size:11px}
+ .playback{gap:4px}.playback span{font-size:8px}.playback select{width:44px}
+ nav small{font-size:9px}
+}
+
+/* Design step 2: one primary action, clear dispatch endpoints and metrics. */
+.route-action{pointer-events:auto;min-height:44px;padding:11px 16px;border-radius:12px;background:#45df88;color:#10291b;font-size:13px;font-weight:700;width:100%}
+.route-action:disabled{background:#29383e;color:#a1b1ba;opacity:1}
+.route-action:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.journey-points{padding:4px 0 12px}
+.journey-point{display:flex;gap:12px;align-items:flex-start;position:relative;padding:10px 0}
+.journey-point>div{min-width:0;flex:1}
+.journey-point small,.journey-metrics small{display:block;font-size:10px;color:#9bafb9;letter-spacing:.4px;margin-bottom:6px}
+.journey-point strong{display:block;font-size:13px;line-height:1.5;overflow-wrap:anywhere}
+.journey-dot{display:grid;place-items:center;flex-shrink:0;width:28px;height:28px;border-radius:9px;background:#264b39;color:#64e99d;font-size:13px;font-weight:700;z-index:1}
+.destination .journey-dot{background:#513c2c;color:#ffb876}
+.hospital:after{content:'';position:absolute;left:13px;top:39px;bottom:-10px;border-left:1px dashed #60717b}
+.journey-metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.journey-metrics>div{padding:12px;background:#242f36;border:1px solid #35444d;border-radius:12px}
+.journey-metrics strong{font-size:20px;color:#ecf4f8;font-variant-numeric:tabular-nums}
+.sheet details{margin-top:16px;border-top:1px solid #344048;padding-top:12px}
+.sheet summary{cursor:pointer;color:#99adb8;font-size:12px;padding:4px 0}
+.sheet details p{font-size:11px}
+@media(max-width:799px){.lower{gap:6px}.sensor{padding:7px 10px}.info-row{height:56px}.route-action{min-height:42px}}
+
+/* Design step 3: compact, keyboard-accessible street search. */
+#clear-search{flex-shrink:0;width:28px;height:28px;border-radius:8px;background:#35434c;color:#c5d4dd;font-size:22px;line-height:1;padding:0}
+.sheet .search-note{margin:0 0 12px;font-size:11px;line-height:1.5;color:#9aafba}
+.sheet .map-pick{text-align:left;background:#263b36;color:#76e4ac;border:1px solid #39584b;margin:0 0 10px}
+.sheet .search-result{display:flex;align-items:center;gap:12px;min-height:62px;padding:10px 8px;border-radius:10px;text-align:left}
+.search-result:hover,.search-result:focus-visible{background:#293740}
+.search-pin{display:grid;place-items:center;width:32px;height:32px;flex-shrink:0;border-radius:10px;background:#2c3c46;color:#99c5e8;font-size:22px}
+.search-result-copy{min-width:0;flex:1}
+.search-result-copy strong{display:block;font-size:13px;font-weight:550;overflow-wrap:anywhere;line-height:1.4}
+.sheet .search-result small{font-size:10px;margin-top:4px;color:#92a9b6}
+.search-empty{padding:22px 12px;text-align:center;background:#222e35;border-radius:12px}
+.search-empty strong{font-size:14px}.sheet .search-empty p{font-size:12px;margin-bottom:0}
+
+/* Design step 4: readable layer controls and a traffic intensity legend. */
+.layer-notice{font-size:10px;line-height:1.5;color:#a8bbc6;background:#26343d;padding:9px 11px;border-radius:9px;margin-bottom:12px}
+.layer-card{display:flex;align-items:center;gap:12px;min-height:72px;padding:12px;border:1px solid #34454e;background:#222e35;border-radius:12px;margin-bottom:8px;cursor:pointer}
+.layer-card:hover,.layer-card:focus-within{border-color:#668578;background:#29383e}
+.layer-swatch{height:3px;width:24px;border-radius:3px;flex-shrink:0}.layer-swatch.dot{width:10px;height:10px;margin:0 7px;border-radius:50%}
+.layer-copy{flex:1;min-width:0}.layer-copy strong{display:block;font-size:13px;line-height:1.4}.layer-copy small{display:block;color:#a0b4bf;font-size:10px;line-height:1.5;margin-top:4px}
+.layer-card input{appearance:none;width:36px;height:22px;flex-shrink:0;margin:0;border:1px solid #60727d;border-radius:12px;background:#35434c;position:relative;cursor:pointer}
+.layer-card input:before{content:'';position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:#b5c3cb}
+.layer-card input:checked{background:#42d880;border-color:#42d880}.layer-card input:checked:before{left:17px;background:#143322}
+.traffic-scale{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0}.traffic-scale span{display:flex;flex-direction:column;gap:7px}.traffic-scale i{display:block;height:3px;border-radius:2px}.traffic-scale small{font-size:10px;color:#a8bdc7}
+.traffic-legend.muted{opacity:.45}
+
+/* Design step 5: legible labels, with unchanged map geometry and animations. */
+.search input{font-size:14px}.search input::placeholder{color:#bbc8ce}
+.hint{font-size:12px;color:#e0eaf0}
+nav small{font-size:12px}nav button{color:#b6c7d1}
+.sensor{font-size:12px}.traffic-legend{font-size:11px;color:#b8c9d2}
+.route-copy b{font-size:14px}.route-copy small{font-size:12px;color:#b8c9d2}
+.route-card strong{font-size:13px}.info-row{min-height:66px;height:auto}
+.route-card{min-height:66px}.route-copy small{white-space:normal;line-height:1.4}
+.journey-point small,.journey-metrics small{font-size:11px;color:#b5c7d1}
+.journey-point strong,.search-result-copy strong{font-size:14px}
+.layer-copy small{font-size:12px;color:#b5c7d1}.layer-card{min-height:78px}
+.layer-notice,.sheet .search-note,.sheet .search-result small{font-size:12px}
+.traffic-scale small{font-size:11px;color:#bfced6}
+.sheet details p,.sheet summary{font-size:12px;color:#b5c7d1}
+.playback span{font-size:11px}
+@media(max-width:599px){
+ .sensor{font-size:11px}.route-copy small{font-size:11px}
+ nav small{font-size:11px}.playback span{font-size:9px}
+}
+@media(max-width:359px){nav small{font-size:10px}.hint{font-size:11px}}
+
+/* Compact ambulance interface: one dispatch card, one primary action. */
+.dock{top:74px;bottom:auto;left:12px;right:68px;width:auto;padding:8px;border-radius:14px}
+.hint{top:142px;left:12px;max-width:calc(100% - 80px)}
+.lower.dispatch-panel{left:12px;right:12px;bottom:24px;width:auto;padding:12px;gap:10px;pointer-events:auto;border-radius:16px;max-height:48%;overflow:auto}
+.dispatch-summary{display:flex;flex-direction:column;gap:12px;width:100%;text-align:left;padding:0;background:transparent}
+.dispatch-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:14px}
+.dispatch-heading>span{color:#9cb4c2;font-size:22px}.dispatch-heading b{line-height:1.35}
+.dispatch-endpoint{display:block;border-left:2px solid #55d88c;padding-left:10px;min-width:0}
+.dispatch-endpoint.destination{border-color:#f9a765}
+.dispatch-endpoint small,.dispatch-metrics small{display:block;font-size:10px;color:#a9bdc8;margin-bottom:4px;letter-spacing:.3px}
+.dispatch-endpoint strong{display:block;font-size:13px;line-height:1.4;overflow-wrap:anywhere}
+.dispatch-metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px solid #35434c;padding-top:10px;width:100%}
+.dispatch-metrics b{font-size:19px;font-variant-numeric:tabular-nums;color:#eaf3f8}
+.dispatch-status{font-size:11px;line-height:1.5;color:#b5c9d4}
+.demo-controls{border-top:1px solid #35434c;padding-top:8px;pointer-events:auto}
+.demo-controls summary{cursor:pointer;font-size:12px;color:#b5c9d4;padding:5px 0}
+.demo-controls .playback{padding:8px 0 0;background:none}.playback select{pointer-events:auto}
+.sheet{top:142px;bottom:24px;max-height:calc(100% - 166px);z-index:800}
+.leaflet-bottom.leaflet-right{bottom:0}
+@media(min-width:800px){
+ .dock{top:78px;left:20px;right:auto;width:380px}
+ .hint{top:148px;left:20px;width:380px;max-width:380px}
+ .lower.dispatch-panel{left:20px;right:auto;bottom:20px;width:380px;max-height:calc(100% - 210px);padding:16px}
+ .sheet{top:148px;bottom:auto;left:20px;width:380px;max-height:calc(100% - 172px)}
+}
+@media(max-width:599px){.dispatch-summary{gap:8px}.dispatch-metrics b{font-size:17px}.dispatch-endpoint strong{font-size:12px}.dispatch-heading{font-size:13px}}
+
+/* Translucent surfaces: alpha affects the background, never text or controls. */
+:root{--glass-surface:rgba(20,29,35,.78);--glass-border:rgba(183,211,226,.25)}
+.glass,.dock,.lower.dispatch-panel,.zoom,.mode{
+ background:var(--glass-surface);border-color:var(--glass-border);
+ backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none;
+}
+.search{background:rgba(40,54,63,.52);border-color:rgba(183,211,226,.22)}
+.search input::placeholder{color:#c5d2da}
+.sheet{background:rgba(20,29,35,.94)}
+.sheet header{background:rgba(20,29,35,.97)}
+.layer-card,.journey-metrics>div,.search-empty{background:rgba(44,60,69,.55)}
+.layer-notice{background:rgba(44,60,69,.5)}
+.sheet .secondary{background:rgba(51,74,63,.7)}
+.sheet .map-pick{background:rgba(38,59,54,.7)}
+.toast,.busy{background:rgba(20,29,35,.94)}
+.dispatch-endpoint small,.dispatch-metrics small{color:#c4d3dc}
+.dispatch-status,.demo-controls summary{color:#c7d7e1}
+/* Keep the main action and map markers solid for immediate recognition. */
+@media(prefers-reduced-transparency:reduce){
+ .glass,.dock,.lower.dispatch-panel,.zoom,.mode,.sheet,.sheet header,.toast,.busy{background:#192126}
+ .search,.layer-card,.journey-metrics>div,.search-empty,.layer-notice{background:#293941}
+ .sheet .secondary,.sheet .map-pick{background:#304b3d}
+}
+
+.address-editor label{display:block;font-size:12px;color:#c7d7e1;margin-top:12px}
+.address-editor input{display:block;width:100%;margin-top:7px;padding:12px;border:1px solid #617782;border-radius:10px;background:#1c2a32;color:#f0f6fa;font-size:14px}
+
+/* Explicit entry to route actions, separate from the read-only summary. */
+.route-manage{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:56px;padding:11px 12px;text-align:left;border:1px solid #607c72;border-radius:12px;background:rgba(39,64,54,.88);color:#e9fff2;cursor:pointer}
+.route-manage>span:first-child{min-width:0}
+.route-manage strong{display:block;font-size:13px;line-height:1.4}
+.route-manage small{display:block;margin-top:4px;font-size:11px;line-height:1.5;color:#c5dacf;overflow-wrap:anywhere}
+.route-manage-arrow{font-size:26px;color:#87e9ae}
+.route-manage:hover{background:#345344;border-color:#8cba9f}
+.route-manage:focus-visible{outline:2px solid #9ef4bf;outline-offset:3px}
+@media(prefers-reduced-transparency:reduce){.route-manage{background:#274036}}
+
+/* End-of-trip summary; no additional requests or animation. */
+.trip-report{border-top:1px solid #52665f;padding-top:10px}
+.trip-report h3{margin:0;font-size:14px}
+.trip-report h3 small{font-size:10px;color:#b7cabc;font-weight:400;margin-left:8px}
+.trip-report #report-status{font-size:13px;font-weight:600;color:#e3f4e8;line-height:1.5;margin:8px 0}
+.trip-report dl{margin:0;display:grid;gap:7px}
+.trip-report dl>div{display:flex;justify-content:space-between;gap:12px}
+.trip-report dt{font-size:12px;color:#c5d6df}
+.trip-report dd{margin:0;font-size:13px;font-weight:600;color:#f0f7fa;font-variant-numeric:tabular-nums}
+.trip-report .report-note{font-size:11px;line-height:1.5;color:#b8cbd5;margin:10px 0 0}
+
+/* Keep navigation buttons above the attribution footer. */
+#frame-cadence{display:none!important}
+.leaflet-control-attribution{max-width:min(340px,calc(100vw - 28px));white-space:normal;overflow-wrap:anywhere;line-height:1.3;font-size:9px!important;padding:3px 6px!important}
+@media(min-width:800px){.tools{bottom:64px}}
+
+/* Right edge controls: layers at the top, zoom and location at the bottom. */
+.tools{top:16px;right:16px;bottom:42px;gap:10px;align-items:center;pointer-events:none}
+.tools>button,.tools>.zoom{pointer-events:auto;flex-shrink:0}
+.tools .zoom{margin-top:auto}
+.tools>.tool{width:44px;height:44px}
+.tools .zoom{width:44px;padding:3px}
+.tools .zoom button{width:36px;height:38px}
+@media(max-width:799px){
+ .tools{right:12px;top:16px;bottom:42px}
+ .lower.dispatch-panel{right:72px}
+}
+
+/* Readable dispatch panel typography in both themes. */
+.dispatch-panel{font-size:15px;line-height:1.5}
+.dispatch-panel .dispatch-summary{gap:14px}
+.dispatch-panel .dispatch-heading{font-size:18px}
+.dispatch-panel .dispatch-endpoint small,
+.dispatch-panel .dispatch-metrics small{font-size:13px;line-height:1.45;letter-spacing:0}
+.dispatch-panel .dispatch-endpoint strong{font-size:16px;line-height:1.5}
+.dispatch-panel .call-priority{font-size:14px;flex-wrap:wrap;gap:8px}
+.dispatch-panel .call-priority select{font-size:14px;max-width:100%;width:100%;padding:10px;min-height:42px}
+.dispatch-panel .dispatch-metrics>span{min-width:0}
+.dispatch-panel .dispatch-metrics b{font-size:24px;line-height:1.35;overflow-wrap:anywhere}
+.dispatch-panel .dispatch-status{font-size:14px;line-height:1.6;overflow-wrap:anywhere}
+.dispatch-panel .route-manage strong{font-size:16px}
+.dispatch-panel .route-manage small{font-size:13px;line-height:1.5}
+.dispatch-panel .route-action{font-size:16px;line-height:1.4;min-height:48px;white-space:normal}
+.dispatch-panel .trip-report h3{font-size:17px}
+.dispatch-panel .trip-report h3 small{font-size:13px;display:inline-block}
+.dispatch-panel .trip-report #report-status,
+.dispatch-panel .trip-report dt,
+.dispatch-panel .trip-report dd{font-size:15px;line-height:1.5}
+.dispatch-panel .trip-report dt{min-width:0;overflow-wrap:anywhere}
+.dispatch-panel .trip-report dd{flex-shrink:0}
+.dispatch-panel .demo-controls summary{font-size:15px;line-height:1.5}
+.dispatch-panel .playback span,
+.dispatch-panel .playback select{font-size:13px}
+.dispatch-panel .playback{flex-wrap:wrap}
+.dispatch-panel .playback input{min-width:70px}

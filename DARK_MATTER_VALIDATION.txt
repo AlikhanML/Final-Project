@@ -1,0 +1,3 @@
+63 JavaScript assertions passed, app.js syntax and Python UI compilation passed.
+Streamlit AppTest: no key, entering a dummy key, clearing the key passed.
+Live CARTO tile responses and browser appearance were not verified with a valid key.

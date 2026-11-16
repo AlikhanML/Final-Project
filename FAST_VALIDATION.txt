@@ -1,0 +1,6 @@
+111 Python tests passed.
+40 JavaScript assertions passed.
+Python compilation and JavaScript syntax checks passed.
+Streamlit AppTest: startup, destination-edge route and two reruns passed.
+Benchmarks: PERFORMANCE_RESULTS.json.
+Full user city snapshot and Windows execution unavailable.

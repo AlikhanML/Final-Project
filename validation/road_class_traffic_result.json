@@ -1,0 +1,91 @@
+{
+  "model": "road-class-queues-v1",
+  "density": 0.2,
+  "seed": 42,
+  "classes": {
+    "service": {
+      "edges": 140359,
+      "red": 0,
+      "slow": 49,
+      "mean_slowdown_by_length": 0.00019017520586880407
+    },
+    "tertiary": {
+      "edges": 11906,
+      "red": 347,
+      "slow": 1180,
+      "mean_slowdown_by_length": 0.2627848366956903
+    },
+    "trunk": {
+      "edges": 1506,
+      "red": 124,
+      "slow": 376,
+      "mean_slowdown_by_length": 0.8853300341997538
+    },
+    "residential": {
+      "edges": 58352,
+      "red": 0,
+      "slow": 405,
+      "mean_slowdown_by_length": 0.009717814606804473
+    },
+    "primary": {
+      "edges": 2607,
+      "red": 249,
+      "slow": 801,
+      "mean_slowdown_by_length": 0.9408368493848546
+    },
+    "secondary": {
+      "edges": 7821,
+      "red": 395,
+      "slow": 1442,
+      "mean_slowdown_by_length": 0.4223660384204978
+    },
+    "secondary_link": {
+      "edges": 2285,
+      "red": 20,
+      "slow": 30,
+      "mean_slowdown_by_length": 0.057954192693905754
+    },
+    "unclassified": {
+      "edges": 10693,
+      "red": 0,
+      "slow": 264,
+      "mean_slowdown_by_length": 0.03700635692832019
+    },
+    "tertiary_link": {
+      "edges": 1151,
+      "red": 0,
+      "slow": 9,
+      "mean_slowdown_by_length": 0.004850946002794071
+    },
+    "living_street": {
+      "edges": 1129,
+      "red": 0,
+      "slow": 0,
+      "mean_slowdown_by_length": 0.0
+    },
+    "motorway": {
+      "edges": 385,
+      "red": 19,
+      "slow": 33,
+      "mean_slowdown_by_length": 0.7934327229734053
+    },
+    "motorway_link": {
+      "edges": 39,
+      "red": 0,
+      "slow": 0,
+      "mean_slowdown_by_length": 0.0
+    },
+    "trunk_link": {
+      "edges": 822,
+      "red": 19,
+      "slow": 72,
+      "mean_slowdown_by_length": 0.17950692988688893
+    },
+    "primary_link": {
+      "edges": 632,
+      "red": 16,
+      "slow": 32,
+      "mean_slowdown_by_length": 0.3039639015317035
+    }
+  }
+}

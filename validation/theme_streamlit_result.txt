@@ -1,0 +1,1 @@
+PASS: actual app starts, Dark -> Light -> Dark via AppTest, session state and parent theme CSS match, no Streamlit exceptions. Browser rendering not tested.

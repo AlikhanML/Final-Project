@@ -1,0 +1,5 @@
+Stage 1 regression suite
+Command: python run_tests.py
+Result: 27 tests passed
+Network disabled during tests
+Scope: algorithm and rule regression; no live city/browser verification in this stage.

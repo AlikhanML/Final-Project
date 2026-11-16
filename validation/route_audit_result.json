@@ -1,0 +1,139 @@
+{
+  "nodes": 5634,
+  "edges": 10793,
+  "coverage": "district",
+  "rows": [
+    {
+      "start": 1528,
+      "goal": 3296,
+      "dynamic": false,
+      "status": "reached",
+      "legal": true,
+      "avoided": true,
+      "reached": true,
+      "closure": false,
+      "seconds": 0.103
+    },
+    {
+      "start": 3424,
+      "goal": 111,
+      "dynamic": false,
+      "status": "reached",
+      "legal": true,
+      "avoided": true,
+      "reached": true,
+      "closure": false,
+      "seconds": 0.206
+    },
+    {
+      "start": 277,
+      "goal": 3713,
+      "dynamic": false,
+      "status": "reached",
+      "legal": true,
+      "avoided": true,
+      "reached": true,
+      "closure": false,
+      "seconds": 0.194
+    },
+    {
+      "start": 754,
+      "goal": 5247,
+      "dynamic": false,
+      "status": "reached",
+      "legal": true,
+      "avoided": true,
+      "reached": true,
+      "closure": false,
+      "seconds": 0.097
+    },
+    {
+      "start": 2901,
+      "goal": 5261,
+      "dynamic": false,
+      "status": "reached",
+      "legal": true,
+      "avoided": true,
+      "reached": true,
+      "closure": false,
+      "seconds": 0.249
+    },
+    {
+      "start": 1344,
+      "goal": 3001,
+      "dynamic": false,
+      "status": "reached",
+      "legal": true,
+      "avoided": true,
+      "reached": true,
+      "closure": false,
+      "seconds": 0.135
+    },
+    {
+      "start": 1528,
+      "goal": 3296,
+      "dynamic": true,
+      "status": "reached",
+      "legal": true,
+      "avoided": true,
+      "reached": true,
+      "closure": true,
+      "seconds": 0.17
+    },
+    {
+      "start": 3424,
+      "goal": 111,
+      "dynamic": true,
+      "status": "reached",
+      "legal": true,
+      "avoided": true,
+      "reached": true,
+      "closure": true,
+      "seconds": 0.205
+    },
+    {
+      "start": 277,
+      "goal": 3713,
+      "dynamic": true,
+      "status": "reached",
+      "legal": true,
+      "avoided": true,
+      "reached": true,
+      "closure": true,
+      "seconds": 0.286
+    },
+    {
+      "start": 754,
+      "goal": 5247,
+      "dynamic": true,
+      "status": "reached",
+      "legal": true,
+      "avoided": true,
+      "reached": true,
+      "closure": true,
+      "seconds": 0.182
+    },
+    {
+      "start": 2901,
+      "goal": 5261,
+      "dynamic": true,
+      "status": "reached",
+      "legal": true,
+      "avoided": true,
+      "reached": true,
+      "closure": true,
+      "seconds": 0.354
+    },
+    {
+      "start": 1344,
+      "goal": 3001,
+      "dynamic": true,
+      "status": "reached",
+      "legal": true,
+      "avoided": true,
+      "reached": true,
+      "closure": true,
+      "seconds": 0.209
+    }
+  ]
+}

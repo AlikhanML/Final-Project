@@ -1,0 +1,48 @@
+tests/test_component_boot.cjs: exit 0
+Component handshake passes with current and legacy HTML.
+
+tests/test_frame_recording.cjs: exit 0
+Frame recording: 30/60/120 Hz and long-stall statistics passed.
+
+tests/test_layer_updates.cjs: exit 0
+21 selective-layer assertions passed.
+
+tests/test_playback.cjs: exit 0
+10 playback assertions passed.
+4 turn-pause playback assertions passed.
+5 remaining-distance assertions passed.
+
+tests/test_render.cjs: exit 0
+10 incremental rendering assertions passed.
+3 redundant-render assertions passed.
+8 address-animation assertions passed.
+2 incomplete-trip label assertions passed.
+3 reduced-motion assertions passed.
+1 removed-closure-overlay assertion passed.
+3 citywide traffic rendering assertions passed.
+9 dispatch action state assertions passed.
+6 street search ranking assertions passed.
+7 compact interface state assertions passed.
+12 trip result report assertions passed.
+6 traffic refresh assertions passed.
+7 traffic persistence assertions passed.
+4 ETA explanation assertions passed.
+7 priority selection and ETA refresh assertions passed.
+7 emergency beacon state assertions passed.
+
+tests/test_smoothness.cjs: exit 0
+7 smooth playback assertions passed.
+11 cadence and subpixel assertions passed.
+
+tests/test_tiles.cjs: exit 0
+16 tile-loading assertions passed.
+6 basemap configuration assertions passed.
+3 zoom animation assertions passed.
+3 bounded tile look-ahead assertions passed.
+
+tests/test_traffic_view.cjs: exit 0
+{"source_lines":10001,"visible_lines":122,"query_ms":0.2679949999999991,"synthetic":true}
+6 traffic viewport assertions passed.
+
+tests/test_vehicle_heading.cjs: exit 0
+13 vehicle heading assertions passed.

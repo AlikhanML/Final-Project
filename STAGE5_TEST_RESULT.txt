@@ -1,0 +1,5 @@
+Stage 5: 58 Python tests passed; 10 Node playback assertions passed.
+Time tests include fastest-vs-shortest routes, Dijkstra agreement, terminal timing, Q reward units and whole-trip subdivision invariance.
+Browser component fixture: play/pause, rate changes without ETA mutation, seek end, replay, ETA info; no JavaScript errors.
+Streamlit AppTest: timed-trip payload and Grid World render without exceptions.
+Model ETA only; no live traffic/full-city verification.

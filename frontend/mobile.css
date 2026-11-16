@@ -1,0 +1,78 @@
+/* Phone layout; desktop rules remain untouched. */
+.mobile-panel-toggle{display:none}
+@media(max-width:799px){
+ #screen{min-height:0;border-radius:0;--mobile-panel-height:238px}
+ #screen.mobile-expanded{--mobile-panel-height:min(62%,520px)}
+ .top{top:10px;left:10px;right:64px}
+ .status{height:40px;padding:0 12px}.status b{font-size:22px}
+ .dock{top:60px;left:10px;right:10px;padding:6px}
+ .search{height:46px}.search input{font-size:16px;min-width:0}
+ .hint{top:124px;left:10px;right:64px;width:auto;max-width:none;font-size:12px;padding:8px 10px}
+ .lower.dispatch-panel{top:auto;bottom:20px;left:8px;right:8px;width:auto;height:var(--mobile-panel-height);max-height:calc(100% - 172px);padding:8px 12px 12px;gap:8px;border-radius:20px;scrollbar-gutter:auto;background:var(--q-surface)}
+ .mobile-panel-toggle{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;width:100%;padding:4px 2px;color:var(--q-text);background:transparent;text-align:left;font-size:14px;font-weight:650;flex-shrink:0}
+ .mobile-panel-toggle::after{content:'⌃';font-size:24px;color:var(--accent)}
+ .mobile-panel-toggle[aria-expanded="true"]::after{content:'⌄'}
+ .dispatch-panel .dispatch-summary{gap:10px}
+ .dispatch-panel .dispatch-metrics{padding:0;gap:8px}
+ .dispatch-panel .dispatch-metrics>.metric-card{min-height:80px;padding:10px;gap:5px}
+ .dispatch-panel .dispatch-metrics b{font-size:23px;letter-spacing:-.5px}
+ .dispatch-panel .dispatch-metrics small{font-size:12px}
+ .dispatch-panel .metric-icon{display:none}
+ #screen:not(.mobile-expanded) .dispatch-panel .dispatch-summary>:not(.dispatch-metrics),
+ #screen:not(.mobile-expanded) .dispatch-panel>:is(.route-manage,.trip-report,.demo-controls){display:none}
+ .dispatch-panel .dispatch-heading{display:none}
+ .dispatch-panel .route-action{position:static;min-height:48px;box-shadow:none;margin-top:auto;font-size:14px}
+ .dispatch-panel .dispatch-endpoint strong{font-size:15px}
+ .dispatch-panel .dispatch-status{font-size:13px}
+ .priority-badge{min-height:48px;font-size:14px}
+ .tools{top:10px;right:10px;bottom:calc(var(--mobile-panel-height) + 32px);gap:8px}
+ .tools .zoom{margin-top:auto}.tools>.tool{width:44px;height:44px}
+ .zoom button{height:44px;width:36px}
+ .sheet{top:122px;bottom:20px;left:8px;width:calc(100% - 16px);max-height:calc(100% - 142px);padding:14px;border-radius:18px;background:var(--panel-bg)}
+ .sheet header{top:-14px;background:var(--panel-bg)}
+ #close-sheet,#clear-search{min-width:44px;min-height:44px}
+ .sheet input,.sheet select{font-size:16px}
+ .sheet button{min-height:44px}
+ .toast{top:118px;font-size:14px}
+ .leaflet-control-attribution{font-size:8px!important}
+ .dispatch-panel .playback select{min-height:44px}
+}
+@media(max-width:799px) and (max-height:560px){
+ #screen{--mobile-panel-height:202px}
+ .lower.dispatch-panel{left:8px;right:auto;width:46%;max-height:calc(100% - 126px);bottom:18px}
+ #screen.mobile-expanded{--mobile-panel-height:calc(100% - 126px)}
+ .tools{bottom:30px}
+ .dispatch-panel .dispatch-metrics>.metric-card{min-height:66px;padding:8px}
+ .dispatch-panel .dispatch-metrics b{font-size:19px}
+ .dispatch-panel .dispatch-metrics small{font-size:11px}
+ .hint{display:none}
+ .sheet{top:116px;max-height:calc(100% - 134px)}
+}
+@media(max-width:799px){#screen.mobile-expanded .tools .zoom{display:none}#screen.mobile-expanded #locate{margin-top:auto}}
+@media(max-width:359px){.status small{display:none}.status b{font-size:21px}}
+
+/* Compact map-first phone layout, revision 78. */
+@media(max-width:799px){
+ #screen{--mobile-panel-height:166px}
+ #screen.mobile-empty:not(.mobile-expanded){--mobile-panel-height:58px}
+ .top{top:8px;left:8px;right:auto}
+ .status{height:34px;padding:0 10px;gap:7px}.status b{font-size:19px}.status small{display:none}
+ .dock{top:50px;left:8px;right:8px;padding:4px;border-radius:12px}
+ .search{height:42px;padding:0 10px}.search input{font-size:16px}
+ .hint{display:none}
+ .tools{top:8px;right:8px;bottom:calc(var(--mobile-panel-height) + 30px);gap:6px}
+ .tools .zoom{display:none}
+ #locate{margin-top:auto}
+ .lower.dispatch-panel{bottom:20px;padding:4px 10px 8px;gap:4px;border-radius:16px}
+ .mobile-panel-toggle{min-height:40px;font-size:13px;padding:0 2px}
+ .mobile-panel-toggle::after{font-size:20px}
+ .dispatch-panel .dispatch-metrics>.metric-card{min-height:58px;padding:6px 9px;gap:3px;border-radius:10px}
+ .dispatch-panel .dispatch-metrics b{font-size:20px}
+ .dispatch-panel .dispatch-metrics small{font-size:11px}
+ .dispatch-panel .route-action{min-height:44px;padding:8px;font-size:13px;margin-top:0}
+ #screen.mobile-empty:not(.mobile-expanded) .dispatch-panel>:not(.mobile-panel-toggle){display:none}
+ #screen.mobile-expanded{--mobile-panel-height:min(62%,520px)}
+ #screen.mobile-expanded .dispatch-panel{padding:6px 12px 12px;gap:10px}
+ .sheet{top:106px;max-height:calc(100% - 126px)}
+ .toast{top:106px}
+}

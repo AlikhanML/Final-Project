@@ -1,0 +1,73 @@
+*{box-sizing:border-box}html,body{margin:0;background:#171d20;color:#e9eeeb;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;width:100%;height:100%;overflow:hidden}button,input{font:inherit}button{cursor:pointer;color:inherit;border:0;background:none;touch-action:manipulation}button:focus-visible,input:focus-visible{outline:2px solid #4ae582;outline-offset:3px}button:disabled{opacity:.35;cursor:default}button:hover{filter:brightness(1.16)}svg[aria-hidden="true"]{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}#screen{position:relative;width:100%;height:100%;min-height:600px;background:#1a2326;overflow:hidden}#map{position:absolute;inset:0;z-index:0}.leaflet-container{background:#20292d!important;font-family:inherit}.leaflet-tile-pane{filter:invert(.92) hue-rotate(180deg) saturate(.5) brightness(.78)}.leaflet-control-attribution{font-size:8px!important;background:#141b21cc!important;color:#b6c2bb!important}.leaflet-control-attribution a{color:#b6c2bb!important}.leaflet-bottom.leaflet-right{bottom:183px}.glass{background:rgba(17,21,23,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid #ffffff0b;box-shadow:0 5px 24px #0003;border-radius:17px}.top{position:absolute;top:20px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:center;pointer-events:none;z-index:500}.top>*{pointer-events:auto}.status{display:flex;align-items:center;gap:12px;height:52px;padding:0 19px}.status b{font-size:23px;letter-spacing:-1px}.status b span{color:#43e17d}.status small{font-size:10px;color:#9daaa1;letter-spacing:.5px;margin-left:4px}.live{width:8px;height:8px;background:#3ee57a;border-radius:50%;box-shadow:0 0 14px #3ee57a55}.mode{color:#91a69a;letter-spacing:2px;font-size:10px;padding:10px;background:#171e23b0;border-radius:10px}.mode span{color:#45da7e}.hint{position:absolute;z-index:500;top:89px;left:20px;max-width:calc(100% - 105px);font-size:12px;color:#d1e0d6;padding:12px 15px;line-height:1.4}.tools{position:absolute;right:18px;top:88px;bottom:350px;display:flex;flex-direction:column;align-items:center;gap:13px;z-index:500}.tool{height:52px;width:52px;display:grid;place-items:center}.green{color:#42e17e}.traffic-ring{border:2px solid #42dd7c;color:#b4e3c3;border-radius:50%;width:32px;height:32px;display:grid;place-items:center;font-size:13px;font-weight:600}.traffic-ring.on{background:#3bd77c;color:#14271b}.zoom{margin-top:auto;display:flex;flex-direction:column;width:52px;overflow:hidden}.zoom button{height:49px;font-size:31px;font-weight:300}.zoom button+button{border-top:1px solid #ffffff15}.lower{position:absolute;bottom:194px;left:18px;right:18px;z-index:500;display:flex;flex-direction:column;gap:12px;pointer-events:none}.lower button,.lower input{pointer-events:auto}.sensor{align-self:flex-start;display:flex;gap:9px;align-items:center;padding:12px 15px;font-size:12px;color:#d8e1dc}.sensor svg{color:#77b5f3;width:21px;height:21px}.info-row{display:flex;gap:11px;height:66px}.route-card{display:flex;align-items:center;gap:14px;text-align:left;padding:13px 17px;min-width:0;flex:1}.route-card svg{width:26px;height:26px;color:#cbd5cf}.route-copy{display:flex;flex-direction:column;min-width:0;gap:4px;flex:1}.route-copy b{font-size:15px;font-weight:550;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.route-copy small{font-size:11px;color:#93a29a;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.route-card strong{color:#53df87;font-size:14px;font-weight:600;white-space:nowrap}.dock{position:absolute;bottom:0;left:0;right:0;z-index:600;background:linear-gradient(#24282bf5,#181c1ffb);border-radius:25px 25px 0 0;backdrop-filter:blur(24px);border-top:1px solid #ffffff0c;box-shadow:0 -6px 40px #0003;padding:9px 18px 8px}.handle{height:4px;width:42px;border-radius:4px;background:#56605b;margin:0 auto 13px;opacity:.65}.search-row{display:flex;gap:10px}.search{display:flex;align-items:center;gap:13px;padding:0 15px;height:55px;background:#353a3cf0;border:1px solid #ffffff07;border-radius:16px;flex:1;min-width:0;color:#a9b2ad}.search input{width:100%;background:transparent;border:0;outline:none;color:#ecf2ed;min-width:0;font-size:16px}.search input::placeholder{color:#9fa8a3}.search button{padding:3px;color:#aeb8b1}.menu{border-radius:16px;width:53px;background:#34393b}.menu svg{width:28px;height:28px}nav{display:flex;justify-content:space-around;gap:6px;margin:16px 0 10px}nav button{color:#89968e;display:flex;align-items:center;flex-direction:column;gap:6px;flex:1;padding:0;min-width:0}nav svg{width:25px;height:25px}nav small{font-size:11px}nav .active{color:#3de17a}.home{height:4px;width:102px;border-radius:3px;background:#c7ceca;margin:10px auto 0;opacity:.65}.sheet{position:absolute;z-index:800;bottom:190px;left:18px;width:min(420px,calc(100% - 36px));max-height:calc(100% - 280px);padding:18px;overflow:auto;background:#1d2428f5}.sheet header{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:14px}.sheet h2{font-size:17px;margin:0}.sheet header button{font-size:26px;color:#a5b3aa}.sheet p{font-size:13px;line-height:1.6;color:#a7b8ac}.sheet .row{padding:13px 0;border-bottom:1px solid #ffffff0c;display:flex;justify-content:space-between;align-items:center;gap:12px}.sheet .row button{color:#4ce689;flex-shrink:0}.sheet .row span{font-size:13px}.sheet .big{display:block;width:100%;padding:13px;background:#39d879;color:#112919;border-radius:12px;font-weight:650;margin:10px 0}.sheet .secondary{background:#303b34;color:#d7e5dc}.sheet .result{display:block;width:100%;text-align:left;padding:13px 8px;border-bottom:1px solid #ffffff0b;font-size:14px}.sheet .result small{display:block;font-size:10px;color:#94a79b;margin-top:4px}.playback{display:flex;align-items:center;gap:10px;padding:7px 12px;pointer-events:auto}.playback button{width:34px;height:32px;color:#54e58b}.playback input{flex:1;accent-color:#40de7e;min-width:0}.playback span{font-size:10px;color:#acb9b0}.toast,.busy{position:absolute;z-index:1200;top:155px;left:50%;transform:translateX(-50%);padding:14px 18px;max-width:85%;color:#deeee3;font-size:13px;text-align:center}.busy{top:44%;border-color:#45e780}.busy:before{content:' ';display:inline-block;width:9px;height:9px;border-radius:50%;background:#45e780;margin-right:9px;animation:pulse 1s infinite}@keyframes pulse{50%{opacity:.25}}[hidden]{display:none!important}.pin{width:32px;height:32px;background:#42d77a;color:#10271a;border:3px solid white;border-radius:50%;display:grid;place-items:center;font-weight:800;box-shadow:0 4px 12px #0007}.pin.end{background:#f99450;color:#24170e}.vehicle{height:40px;width:40px;background:#308cff;border:3px solid white;border-radius:50%;display:grid;place-items:center;box-shadow:0 0 0 8px #2684ff30,0 0 30px #2684ff70;color:white;font-size:23px}.accuracy{border-radius:50%;background:#298bff25;pointer-events:none}.leaflet-tooltip{background:#1b2429;color:#dbe9e0;border:1px solid #415047;box-shadow:none}.offline-label{color:#91a69b;font-size:10px;white-space:nowrap;pointer-events:none}@media(min-width:800px){.dock{width:570px;left:50%;transform:translateX(-50%);border-radius:24px 24px 0 0}.lower{left:50%;transform:translateX(-50%);width:534px}.sheet{left:50%;transform:translateX(-50%);width:534px}.tools{bottom:95px}.hint{max-width:420px}.top{right:23px}.leaflet-bottom.leaflet-right{bottom:6px}.sensor{margin-left:0}}@media(max-width:380px){.status small{display:none}.route-card{gap:8px;padding:11px}.route-card strong{font-size:12px}.route-copy b{font-size:13px}.dock{padding-left:12px;padding-right:12px}.tools{right:12px}.hint{font-size:11px}}
+
+.playback select{background:#283730;color:#69ec9b;border:1px solid #ffffff20;border-radius:9px;padding:6px 4px;font:600 12px inherit;max-width:65px}.playback span{white-space:nowrap}.playback{gap:7px}
+
+/* Avoid repainting moving map pixels through blurred overlays every frame. */
+.glass,.dock{backdrop-filter:none;-webkit-backdrop-filter:none}
+.glass{background:rgba(17,21,23,.97)}
+.dock{background:linear-gradient(#24282b,#181c1f)}
+
+/* Lightweight presentation: no decorative pulse, glow or hover filters. */
+.busy:before{animation:none}
+.vehicle,.pin,.glass,.dock,.live{box-shadow:none}
+button:hover{filter:none}
+
+/* Native Dark Matter colors; only the OSM fallback needs an inversion. */
+:root{--map-bg:#121619;--panel-bg:#1e252b;--panel-hover:#2b353e;--border:#35414b;--text:#edf3f7;--accent:#4ade80}
+html,body,#screen,#map{background:var(--map-bg);color:var(--text)}
+#screen{border:1px solid #28323a;border-radius:20px;overflow:hidden}
+.leaflet-container{background:var(--map-bg)!important;font-family:"Segoe UI",Arial,sans-serif}
+.leaflet-tile-pane{filter:none!important}
+.qadam-osm-tiles{filter:invert(.92) hue-rotate(180deg) saturate(.65) brightness(1.02) contrast(1.08)}
+.qadam-carto-tiles{filter:none!important}
+.leaflet-control-attribution{background:rgba(18,22,25,.94)!important;color:#b8c5cf!important;font-size:11px!important;padding:4px 8px;border-radius:8px 0 0 0}
+.leaflet-control-attribution a{color:#b5d7f0!important}
+.zoom{display:flex;flex-direction:column;width:48px;padding:4px;gap:4px;background:var(--panel-bg);border:1px solid var(--border);border-radius:16px;overflow:hidden;backdrop-filter:none;box-shadow:none}
+.zoom button{display:grid;place-items:center;width:38px;height:42px;padding:0;background:transparent;color:var(--text);border:0;border-radius:11px;font-size:28px;font-weight:500;line-height:1;cursor:pointer;touch-action:manipulation}
+.zoom button+button{border-top:0}
+.zoom button:hover{background:var(--panel-hover);color:var(--accent);filter:none}
+.zoom button:active{background:#35433b}
+.zoom button:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+.zoom button:disabled{color:#66737e;opacity:.5;cursor:default}
+
+/* Tiny diagnostic: updated once per second, no blur or pointer interception. */
+#frame-cadence{position:absolute;bottom:30px;right:18px;z-index:700;padding:3px 7px;border-radius:6px;background:#12181ee6;color:#b4d6c2;font:11px monospace;pointer-events:none}
+
+/* Local vector ambulance; emergency lights are enabled only for urgent calls. */
+.vehicle.vehicle-ambulance{width:36px;height:50px;transform-origin:50% 50%;background:transparent;border:0;border-radius:0;box-shadow:none;font-size:0}
+.vehicle-ambulance svg{display:block;width:36px;height:50px;fill:none;stroke:none}
+
+.call-priority{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;font-size:12px;color:#a8bac6;pointer-events:auto}
+.call-priority select{max-width:65%;min-width:0;background:#1d2b35;color:#dceaf5;border:1px solid #465b6a;border-radius:10px;padding:8px;font:inherit;cursor:pointer}
+.call-priority select[data-priority="urgent"]{border-color:#fa9269;color:#ffb193;background:#3a2724}
+.call-priority select:disabled{opacity:.55;cursor:default}
+
+/* Keep the two lens colors visible when the roof bar is off. */
+.vehicle-ambulance .emergency-light{fill:var(--beacon-color);opacity:.72;stroke:none}
+.vehicle-ambulance .emergency-light-blue{--beacon-color:#237dff}
+.vehicle-ambulance .emergency-light-red{--beacon-color:#ff274d}
+.vehicle-ambulance .emergency-light-core{opacity:0}
+.vehicle-ambulance.vehicle-urgent .emergency-light{
+  transform-box:fill-box;
+  transform-origin:center;
+  transform:scale(1.12,1.33);
+  animation:qadam-beacon-alternate 1.2s steps(1,end) infinite;
+}
+.vehicle-ambulance.vehicle-urgent .emergency-light-blue{
+  --beacon-color:#168cff;
+  --beacon-core:#c1eaff;
+}
+.vehicle-ambulance.vehicle-urgent .emergency-light-red{
+  --beacon-color:#ff183e;
+  --beacon-core:#ffe0e5;
+  animation-delay:-.6s;
+}
+.vehicle-ambulance.vehicle-urgent .emergency-light-core{fill:var(--beacon-core);opacity:1}
+@keyframes qadam-beacon-alternate{
+  0%{opacity:1;filter:drop-shadow(0 0 3px var(--beacon-color))}
+  44%,100%{opacity:.12;filter:none}
+}
+.vehicle-ambulance.vehicle-urgent.vehicle-reduced-motion .emergency-light{animation:none}
+@media(prefers-reduced-motion:reduce){
+  .vehicle-ambulance.vehicle-urgent .emergency-light{animation:none}
+}
